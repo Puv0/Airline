@@ -1,0 +1,22 @@
+a:hover{
+    text-decoration: none;
+}
+
+ul.nav-items {
+    list-style-type: none;
+    padding: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+    width: 80%;
+
+}
+.nav-bar{
+    background-color: #333;
+    width: 100%;
+}
+
+.nav-item{
+
+}

@@ -1,0 +1,11 @@
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+header .back-image{
+    width: 100%;
+    height: 250px;
+    background: url('https://www.gannett-cdn.com/presto/2019/06/23/USAT/c3a9f051-bd6c-4b39-b5b9-38244deec783-GettyImages-932651818.jpg?auto=webp&crop=667,375,x0,y80&format=pjpg&width=1200');
+    background-size: 100% 100%;
+}
