@@ -16,3 +16,4 @@ export class FlightService {
     return this.http.get<any>(`${this.apiUrl}/flight`)
   }
 }
+

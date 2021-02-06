@@ -40,6 +40,8 @@ app.get('/api/test', query.test)
 
 app.get('/api/flight', flight.allFlights)
 
+app.get('/api/flight/this', flight.selectDestinationFlight)
+
 app.post('/api/user/create',query.addCustomer)
 
 module.exports = app

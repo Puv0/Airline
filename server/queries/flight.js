@@ -26,8 +26,27 @@ const allFlights = (req,res)=>{
 
 }
 
+const selectDestinationFlight = (req,res)=>{
+
+    destination = [req.body.from, req.body.to]
+
+    pool.query(`SELECT * FROM flight_list_fare WHERE departure_airport_code = '${destination[0]}' AND
+    Arrival_airport_code = '${destination[1]}'`, (error,results)=>{
+            if(error) {console.log(error.stack)}
+            else{           
+                res.status(200).json({
+                    msg:"succes",
+                    data:results.rows
+                })
+            }
+    })
+
+
+}
+
 
 module.exports = {
     test,
-    allFlights
+    allFlights,
+    selectDestinationFlight
 }
