@@ -1,0 +1,12 @@
+.ffcustomer{
+    display: flex;
+}
+
+.item{
+    margin: 20px;
+}
+
+
+.customer{
+    display: flex;
+}

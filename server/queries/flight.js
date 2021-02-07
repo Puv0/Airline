@@ -14,7 +14,7 @@ const test = (request,response)=>{
 
 
 const allFlights = (req,res)=>{
-    pool.query('SELECT * FROM flight_list_fare', (error,results)=>{
+    pool.query(`SELECT * from flight_list`, (error,results)=>{
 
         if(error) {console.log(err.stack)}
         else{

@@ -2,8 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const port = process.env.port || 3000
-const query = require('./queries');
 const flight = require('./queries/flight')
+const customer = require('./queries/customer')
 
 app.use(bodyParser.json())
 
@@ -34,14 +34,21 @@ app.get('/', (req,res)=> {
 
 //ALL ROUTES FOR OUR QUERRYS
 
-app.get('/api/user',query.getUsers)
 
-app.get('/api/test', query.test)
 
 app.get('/api/flight', flight.allFlights)
 
 app.get('/api/flight/this', flight.selectDestinationFlight)
 
-app.post('/api/user/create',query.addCustomer)
+
+
+
+app.get('/api/customer', customer.getAllCustomers)
+
+app.get('/api/customer/f',  customer.getFfcCustomers)
+
+
+
+
 
 module.exports = app

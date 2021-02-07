@@ -56,7 +56,6 @@
 --DELETE FROM Airplane WHERE airplane_id = 3002;
 
 
-
 -- --FLIGHT -------------
 
 INSERT INTO Flight(Flight_number,weekdays,airline_id)

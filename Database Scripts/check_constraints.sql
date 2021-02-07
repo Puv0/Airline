@@ -1,11 +1,3 @@
-ALTER TABLE leg_instance
-ADD CONSTRAINT date_check
-CHECK(
-	departure_time < arrival_time
-);
-
-select * from leg_instance;
-
 ALTER TABLE airport
 ADD CONSTRAINT airport_code_check
 CHECK(
@@ -41,5 +33,3 @@ ADD CONSTRAINT fare_code_check
 CHECK(
     fare_code SIMILAR TO '(F|J|W|Y)(E)([0-9][0-9]|[0-9][0-9](M)|[0-9](M))[A-Z][A-Z]'
 );
-
-

@@ -1,0 +1,24 @@
+<div class="customer-table">
+
+  
+
+    <h1> FFC CUSTOMER</h1>
+    <div class="ffcustomer" *ngFor="let ffc of ffcustomer">
+
+        <p  class ="item"> {{ffc?.customer_id}} </p>
+    <p class ="item"> {{ffc?.customer_name}} </p>
+    <p class ="item"> {{ffc?.passaport_number}} </p>
+    <p class ="item"> {{ffc?.segment}} </p>
+    <p class ="item"> {{ffc?.total_milleage}} </p>
+    <p class ="item"> {{ffc?.company_name}} </p>
+   
+    </div>
+
+    <h1> Other Customer</h1>
+  <div class="customer" *ngFor="let customer of customers">
+        
+    <p  class ="item"> {{customer?.customer_id}} </p>
+    <p class ="item"> {{customer?.customer_name}} </p>
+    <p class ="item"> {{customer?.passaport_number}} </p>
+    </div>
+</div>

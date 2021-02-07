@@ -1,3 +1,4 @@
+import { CustomerComponent } from './customer/customer.component';
 import { FlightComponent } from './flight/flight.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule, Component } from '@angular/core';
@@ -11,6 +12,7 @@ const routes: Routes = [
 {path:'home', component:HomeComponent},
 {path:'airline',component:AirlineComponent},
 {path:'flight',component:FlightComponent},
+{path:'customer', component: CustomerComponent}
 
 ];
 

@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AirlineComponent } from './airline/airline.component';
 import { FlightComponent } from './flight/flight.component';
 import { HttpClientModule, } from '@angular/common/http';
+import { CustomerComponent } from './customer/customer.component';
 
 
 
@@ -18,7 +19,8 @@ import { HttpClientModule, } from '@angular/common/http';
     HomeComponent,
     NavBarComponent,
     AirlineComponent,
-    FlightComponent
+    FlightComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
