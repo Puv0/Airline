@@ -1,3 +1,4 @@
+const { response } = require('express');
 const pool = require('../db');
 
 
@@ -31,10 +32,37 @@ const getFfcCustomers = (request,response)=>{
 }
 
 
+const getCustomer = (req,res)=>{
+    const iata = req.params.id.substring(0,2)
+    const id  = req.params.id.substring(2,6)
+    pool.query(`
+        SELECT * from ffc_customer_information
+        WHERE customer_id = '${id}' and iata='${iata}'
+        `,(error,results)=>{
+            if(error) { console.log(error.stack)}
+            else{
+                if(results.rowCount == 0){
+                    res.status(201).json({
+                        msg:"no one",
+                        data:0
+                    })
+                }else{
+                res.status(201).json({
+                    msg:"succes",
+                    data:results.rows
+                })
+            }
+            }
+        })
+
+}
+
+
 
 
 
 module.exports = {
     getAllCustomers,
-    getFfcCustomers
+    getFfcCustomers,
+    getCustomer
 }

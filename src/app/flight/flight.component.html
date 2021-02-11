@@ -1,16 +1,21 @@
-<div class="flight-table">
-
-    <div class="flight" *ngFor="let flight of flights">
+<div class="row">   
+    <div class="col-sm-8" class="card"  *ngFor="let flight of flights; let i = index; " style="width: 18rem; margin-left:5rem;"  >
+        <img class="card-img-top" src="../../../assets/flight.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{flight.flight_number}}</h5>
+            <p class="card-text">{{flight.date | date:'shortDate'}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">FROM {{flight.departure_airport_code}} <> {{flight.from}} </li>
+            <li class="list-group-item">TO {{flight.arrival_airport_code}} <> {{flight.to}} </li>
+        </ul>
+        <div class="card-body">
+            <p class ="item"> Scheduled Departure Time: {{flight.scheduled_departure_time}} </p>
+            <p class ="item"> Scheduled Arrival Time {{flight.scheduled_arrival_time}} </p>     
+        </div>
         
-    <p  class ="item"> {{flight.flight_number}} </p>
-    <p class ="item"> {{flight.leg_number}} </p>
-    <p class ="item"> {{flight.departure_airport_code}} </p>
-    <p class ="item"> {{flight.arrival_airport_code}} </p>
-    <p class ="item"> {{flight.scheduled_departure_time}} </p>
-    <p class ="item"> {{flight.scheduled_arrival_time}} </p>
-    <p class ="item"> {{flight.fare_code}} </p>
-    <p class ="item"> {{flight.amount}} </p>
+            <button type="button" class="btn btn-secondary"><a [routerLink]="['/flight' , flight.flight_number]"> Check </a></button>
 
-
+      
     </div>
 </div>

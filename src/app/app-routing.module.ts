@@ -1,3 +1,5 @@
+import { CheckinComponent } from './checkin/checkin.component';
+import { FlightShowComponent } from './flight/flight-show/flight-show.component';
 import { CustomerComponent } from './customer/customer.component';
 import { FlightComponent } from './flight/flight.component';
 import { HomeComponent } from './home/home.component';
@@ -12,7 +14,9 @@ const routes: Routes = [
 {path:'home', component:HomeComponent},
 {path:'airline',component:AirlineComponent},
 {path:'flight',component:FlightComponent},
-{path:'customer', component: CustomerComponent}
+{path:'customer', component: CustomerComponent},
+{path:'flight/:id' , component:FlightShowComponent},
+{path:'checkin',component:CheckinComponent}
 
 ];
 

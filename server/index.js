@@ -40,13 +40,15 @@ app.get('/api/flight', flight.allFlights)
 
 app.get('/api/flight/this', flight.selectDestinationFlight)
 
-
+app.get('/api/flight/:id', flight.getFlight);
+app.get('/api/flight/:id/cost', flight.getCost);
 
 
 app.get('/api/customer', customer.getAllCustomers)
 
 app.get('/api/customer/f',  customer.getFfcCustomers)
 
+app.get('/api/customer/f/:id', customer.getCustomer)
 
 
 

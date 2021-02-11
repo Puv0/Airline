@@ -10,10 +10,18 @@ export class FlightService {
 
   constructor(private http:HttpClient) { }
 
-
-
   getAllFlight(){
     return this.http.get<any>(`${this.apiUrl}/flight`)
   }
-}
 
+
+  getAFlight(id:string){
+    return this.http.get<any>(`${this.apiUrl}/flight/${id}`)
+  }
+
+  getCosts(id:string){
+    return this.http.get<any>(`${this.apiUrl}/flight/${id}/cost`)
+
+  }
+
+}

@@ -10,6 +10,9 @@ import { AirlineComponent } from './airline/airline.component';
 import { FlightComponent } from './flight/flight.component';
 import { HttpClientModule, } from '@angular/common/http';
 import { CustomerComponent } from './customer/customer.component';
+import { FlightShowComponent } from './flight/flight-show/flight-show.component';
+import { CheckinComponent } from './checkin/checkin.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,13 +23,16 @@ import { CustomerComponent } from './customer/customer.component';
     NavBarComponent,
     AirlineComponent,
     FlightComponent,
-    CustomerComponent
+    CustomerComponent,
+    FlightShowComponent,
+    CheckinComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

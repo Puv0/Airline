@@ -24,6 +24,7 @@
     "@ng-bootstrap/ng-bootstrap": "^9.0.2",
     "bootstrap": "^4.5.0",
     "express": "^4.17.1",
+    "jquery": "^3.5.1",
     "nodemon": "^2.0.7",
     "pg": "^8.5.1",
     "pg-pool": "^3.2.2",

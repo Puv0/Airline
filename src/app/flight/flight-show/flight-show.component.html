@@ -1,0 +1,32 @@
+
+<label class="label">Are you customer? 
+    <input class="customer-input" [(ngModel)]="deneme" (change)="customerCheck($event.target.value)">
+    <button type="button" class="btn btn-primary"> Add</button>
+</label>
+
+<div class="row">   
+        <div class="col-sm-8" class="card"  *ngFor="let flight of flights; let i = index; " style="width: 18rem; margin-left:5rem;"  >
+            <img class="card-img-top" src="../../../assets/flight.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{flight.flight_number}}</h5>
+                <p class="card-text">{{flight.date | date:'shortDate'}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">FROM {{flight.departure_airport_code}} <> {{flight.from}} </li>
+                <li class="list-group-item">TO {{flight.arrival_airport_code}} <> {{flight.to}} </li>
+            </ul>
+            <div class="card-body">
+                <select   class="browser-default custom-select" (change) = "selectOption($event.target.value, i)"
+                [(ngModel)]="amount">
+                    <option selected> Choose Your Ticket </option>       
+                      <option *ngFor ="let c of costs" [value] = "c.amount"> 
+                        {{c.fare_code}}
+                      </option>  
+   
+                  </select>
+                
+            </div>
+            <p class="price"> {{flight?.amount}}₺</p>
+            <button>  BUY </button>
+        </div>
+</div>

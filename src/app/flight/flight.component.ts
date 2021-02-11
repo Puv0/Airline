@@ -13,18 +13,12 @@ export class FlightComponent implements OnInit {
 
    flights: Flight[] = [];
 
-    /**
-     * let userTestStatus: { id: number, name: string }[] = [
-    { "id": 0, "name": "Available" },
-    { "id": 1, "name": "Ready" },
-    { "id": 2, "name": "Started" }
-];
-     */
+
   ngOnInit(): void {
     this.flightService.getAllFlight()
      .subscribe(asd=>{
        this.flights =asd.data;
-       console.log(this.flights[0])
+       
      })
       
 

@@ -21,5 +21,10 @@ export class CustomerService {
     return this.http.get<any>(`${this.apiUrl}/customer/f`)
 
   }
+  getCustomer(flight:string, id:string){
+    id = flight + id;
+    console.log(id)
+    return this.http.get<any>(`${this.apiUrl}/customer/f/${id}`)
+  }
 
 }

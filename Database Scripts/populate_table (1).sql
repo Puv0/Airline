@@ -44,6 +44,7 @@ INSERT INTO Airport(Airport_code,Name,City,State)
  ('KK1852',1,2005);
  
  
+ 
  select * from flight
  order by flight_number asc;
  
@@ -255,22 +256,22 @@ delete from ffc;
  ---------------------can_land------------------
  INSERT INTO can_land (airplane_type_name,airport_code)
  VALUES
- ('Boeing 737-900ER','ESB'), ('Boeing 737-900ER','ADB'),
- ('Boeing 737-900ER','ADA'), ('Boeing 737-900ER','AYT'),
-  ('Boeing 737 MAX 8','ESB'),  ('Boeing 737 MAX 8','ADB'),
-  ('Boeing 737 MAX 8','ISL'),  ('Boeing 777-300ER','SAW'),
-  ('Boeing 777-300ER','ESB'),  ('Boeing 777-300ER','TZX'),
-  ('Boeing 777-300ER','KYA'),  ('Boeing 787-9','KYA'),
-  ('Boeing 787-9','ESB'),  ('Boeing 787-9','ISL'),
-  ('Boeing 787-9','SAW'),  ('Airbus A330-300','SAW'),
-  ('Airbus A330-300','ISL'),  ('Airbus A330-300','TZX'),
-  ('Airbus A330-300','YEI'),  ('Airbus A330-300','GZT'),
-  ('Airbus A320-200','AYT'),  ('Airbus A320-200','SAW'),
-  ('Airbus A320-200','ISL'),  ('Airbus A320-200','ESB'),
-  ('Airbus A330-200','GZT'),  ('Airbus A330-200','KYA'),
-  ('Airbus A330-200','YEI'),  ('Airbus A330-200','TZX'),
-  ('Airbus A350-900','SAW'),  ('Airbus A350-900','ISL'),
-  ('Airbus A350-900','ESB'),  ('Airbus A350-900','KYA'),
-  ('Airbus A350-900','AYT'),  ('Airbus A350-900','GZT');    
+ ('Boeing 737-900ER','ESB'),('Boeing 737-900ER','ADB'),
+ ('Boeing 737 MAX 8','ADB'),('Boeing 737 MAX 8','ESB'),
+ ('Boeing 737 MAX 8','SAW'),('Boeing 737 MAX 8','GZT'),
+ ('Boeing 737 MAX 8','KYA'),('Boeing 737 MAX 8','TZX'),
+ ('Boeing 777-300ER','KYA'),('Boeing 777-300ER','ISL'),
+ ('Boeing 777-300ER','ESB'),('Boeing 777-300ER','TZX'),
+ ('Boeing 777-300ER','ADA'),('Boeing 777-300ER','ADB'),
+ ('Boeing 787-9','GZT'),('Boeing 787-9','AYT'),
+ ('Boeing 787-9','ADB'),('Boeing 787-9','TZX'),
+ ('Airbus A330-300','ADA'),('Airbus A330-300','KYA'),
+ ('Airbus A320-200','ISL'),('Airbus A320-200','ESB'),
+ ('Airbus A330-200','ADB'),('Airbus A330-200','KYA'),
+ ('Airbus A350-900','GZT'),('Airbus A350-900','YEI'),
+ ('Airbus A350-900','ADA'),('Airbus A350-900','ESB'); 
   
- select * from can_land
+
+
+
+

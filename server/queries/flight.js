@@ -16,7 +16,7 @@ const test = (request,response)=>{
 const allFlights = (req,res)=>{
     pool.query(`SELECT * from flight_list`, (error,results)=>{
 
-        if(error) {console.log(err.stack)}
+        if(error) {console.log(error.stack)}
         else{
             res.status(200).json({
             msg:"succes",
@@ -24,6 +24,38 @@ const allFlights = (req,res)=>{
         })}
     })
 
+}
+
+const getCost = (req,res)=>{
+    pool.query(`SELECT fare_code, amount from flight_cost
+    WHERE flight_number = '${req.params.id}'`, (error,results)=>{
+
+        if(error) {console.log(error.stack)}
+        else{
+            res.status(200).json({
+            msg:"succes",
+            data:results.rows
+        })}
+    })
+
+}
+
+const getFlight = (req,res)=>{
+
+    const upper = req.params.id.toUpperCase();
+    
+
+    pool.query(`SELECT * from flight_list_fare
+    WHERE flight_number = '${upper}'
+    order by date`
+    ,(error,results)=>{
+        if(error) {console.log(error.stack)}
+        else{
+            res.status(200).json({
+            msg:"succes",
+            data:results.rows
+        })}
+    })
 }
 
 const selectDestinationFlight = (req,res)=>{
@@ -41,12 +73,13 @@ const selectDestinationFlight = (req,res)=>{
             }
     })
 
-
 }
 
 
 module.exports = {
     test,
     allFlights,
-    selectDestinationFlight
+    selectDestinationFlight,
+    getFlight,
+    getCost
 }

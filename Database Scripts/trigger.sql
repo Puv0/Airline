@@ -132,3 +132,32 @@ CREATE TRIGGER customer_segment_lvl_up
 	AFTER UPDATE ON FFC
 	FOR EACH ROW
 	EXECUTE PROCEDURE customer_lvl_up();
+
+----- TRIGGER FOR Controlling assigned airplane can be appropiete departure and arrival airport  
+CREATE OR REPLACE FUNCTION check_can_land()
+	RETURNS TRIGGER
+	LANGUAGE PLPGSQL
+AS $$
+BEGIN
+IF(EXISTS(
+	select  DISTINCT * from flight_assigned_airplane f
+	WHERE EXISTS( SELECT * from can_land c WHERE f.airplane_type_name = c.airplane_type_name AND c.airport_code = f.departure_airport_code)
+	AND EXISTS (SELECT * from can_land c WHERE f.airplane_type_name = c.airplane_type_name AND c.airport_code = f.arrival_airport_code ) AND 
+		 NEW.flight_number = f.flight_number
+	ORDER BY airplane_type_name
+	)) 
+	
+	THEN RAISE NOTICE 'HATA YOK';
+	RAISE NOTICE '%      ', NEW.flight_number;
+ELSE
+	RAISE EXCEPTION 'This plane is not appropriate for this airport' ;
+END IF;
+RETURN NEW;
+END;
+$$
+CREATE TRIGGER can_land_trigger
+	AFTER INSERT ON leg_instance
+	FOR EACH ROW
+	EXECUTE PROCEDURE check_can_land()
+	
+	

@@ -136,7 +136,7 @@ CREATE TABLE Aircraft_manufacturer(
 CREATE TABLE Airplane(
 	airplane_id SERIAL PRIMARY KEY,
 	airplane_type_name TEXT ,
-	total_number_of_seat INTEGER
+	total_number_of_seats INTEGER,
 	FOREIGN KEY (airplane_type_name) REFERENCES airplane_type
 );
 
