@@ -1,0 +1,30 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">customer_id</th>
+        <th scope="col">flight_number</th>
+        <th scope="col">leg_number</th>
+        <th scope="col">seat_number</th>
+        <th scope="col">date</th>
+        <th scope="col">departure_airport_code</th>
+        <th scope="col">arrival_airport_code</th>
+        <th scope="col">milleage</th>
+        <th scope="col">company_id</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flight of flights">
+        <th scope="row">1</th>
+        <td>{{flight?.customer_id}}</td>
+        <td>{{flight?.flight_number}}</td>
+        <td>{{flight?.leg_number}}</td>
+        <td>{{flight?.seat_number}}</td>
+        <td>{{flight?.date | date:'shortDate'}}</td>
+        <td>{{flight?.departure_airport_code}}</td>
+        <td>{{flight?.arrival_airport_code}}</td>
+        <td>{{flight?.milleage}}</td>
+        <td>{{flight?.company_id}}</td>
+      </tr>
+    </tbody>
+  </table>

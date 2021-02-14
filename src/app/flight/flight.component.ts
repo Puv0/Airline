@@ -18,7 +18,7 @@ export class FlightComponent implements OnInit {
     this.flightService.getAllFlight()
      .subscribe(asd=>{
        this.flights =asd.data;
-       
+       console.log(asd.data)
      })
       
 

@@ -10,8 +10,8 @@
             <li class="list-group-item">TO {{flight.arrival_airport_code}} <> {{flight.to}} </li>
         </ul>
         <div class="card-body">
-            <p class ="item"> Scheduled Departure Time: {{flight.scheduled_departure_time}} </p>
-            <p class ="item"> Scheduled Arrival Time {{flight.scheduled_arrival_time}} </p>     
+            <p class ="item"> Scheduled Departure Time: {{flight.departure_time}} </p>
+            <p class ="item"> Scheduled Arrival Time {{flight.arrival_time}} </p>     
         </div>
         
             <button type="button" class="btn btn-secondary"><a [routerLink]="['/flight' , flight.flight_number]"> Check </a></button>

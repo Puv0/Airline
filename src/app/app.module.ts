@@ -12,7 +12,9 @@ import { HttpClientModule, } from '@angular/common/http';
 import { CustomerComponent } from './customer/customer.component';
 import { FlightShowComponent } from './flight/flight-show/flight-show.component';
 import { CheckinComponent } from './checkin/checkin.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { HistoryComponent } from './flight/history/history.component';
+
 
 
 
@@ -25,14 +27,17 @@ import { FormsModule } from '@angular/forms';
     FlightComponent,
     CustomerComponent,
     FlightShowComponent,
-    CheckinComponent
+    CheckinComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule 
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

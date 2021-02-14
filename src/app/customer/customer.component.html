@@ -3,22 +3,42 @@
   
 
     <h1> FFC CUSTOMER</h1>
-    <div class="ffcustomer" *ngFor="let ffc of ffcustomer">
+    <div class="row">
 
-        <p  class ="item"> {{ffc?.customer_id}} </p>
-    <p class ="item"> {{ffc?.customer_name}} </p>
-    <p class ="item"> {{ffc?.passaport_number}} </p>
-    <p class ="item"> {{ffc?.segment}} </p>
-    <p class ="item"> {{ffc?.total_milleage}} </p>
-    <p class ="item"> {{ffc?.company_name}} </p>
-   
-    </div>
+      <div class="col-sm-12" class="card" style="width: 18rem;" *ngFor="let ffc of ffcustomer">
+        <img src="../../assets/people.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ffc?.customer_name}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><p class="tag"> Id </p>Customer Id : {{ffc?.customer_id}}</li>
+          <li class="list-group-item"><p class="tag"> Passaport Number </p>{{ffc?.passaport_number}}</li>
+          <li class="list-group-item"><p class="tag"> Segment </p>{{ffc?.segment}}</li>
+          <li class="list-group-item"><p class="tag"> Total Milleauge </p>{{ffc?.total_milleage}}</li>
+          <li class="list-group-item"><p class="tag"> Airline </p>{{ffc?.company_name}}</li>
+      
+        </ul>
+        
+      </div>
+        
+      </div>
 
     <h1> Other Customer</h1>
-  <div class="customer" *ngFor="let customer of customers">
+
+    <div class="row">
+
+      <div class="col-sm-12" class="card" style="width: 18rem;" *ngFor="let customer of customers">
+        <img src="../../assets/people.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{customer?.customer_name}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><p class="tag"> Id </p>Customer Id : {{customer?.customer_id}}</li>
+          <li class="list-group-item"><p class="tag"> Passaport_number </p>{{customer?.passaport_number}}</li>
+      
+        </ul>
+       
+      </div>
         
-    <p  class ="item"> {{customer?.customer_id}} </p>
-    <p class ="item"> {{customer?.customer_name}} </p>
-    <p class ="item"> {{customer?.passaport_number}} </p>
-    </div>
+      </div>
 </div>

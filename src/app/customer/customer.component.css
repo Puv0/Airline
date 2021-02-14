@@ -10,3 +10,18 @@
 .customer{
     display: flex;
 }
+
+.image{
+    height: 1px;
+    width: 5px;
+}
+
+.img-thumbnail{
+    width: 100px;
+}
+
+.tag{
+    font-weight: bold ;
+    display: inline-block;
+    padding-right: 5px;
+}

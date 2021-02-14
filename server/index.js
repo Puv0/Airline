@@ -34,7 +34,7 @@ app.get('/', (req,res)=> {
 
 //ALL ROUTES FOR OUR QUERRYS
 
-
+app.get('/api/test',flight.test)
 
 app.get('/api/flight', flight.allFlights)
 
@@ -42,7 +42,10 @@ app.get('/api/flight/this', flight.selectDestinationFlight)
 
 app.get('/api/flight/:id', flight.getFlight);
 app.get('/api/flight/:id/cost', flight.getCost);
+app.get('/api/flight/:id/seat', flight.availableSeats);
+app.get('/api/history',flight.getHistory);
 
+app.patch('/api/flight/buy', flight.createTicket);
 
 app.get('/api/customer', customer.getAllCustomers)
 
@@ -50,7 +53,8 @@ app.get('/api/customer/f',  customer.getFfcCustomers)
 
 app.get('/api/customer/f/:id', customer.getCustomer)
 
+app.get('/api/customer/flights/:id', customer.checkin);
 
-
+app.patch('/api/customer/flights/checkin', customer.makeCheckin)
 
 module.exports = app

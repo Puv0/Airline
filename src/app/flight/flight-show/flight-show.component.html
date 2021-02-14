@@ -1,11 +1,32 @@
-
+<!--
 <label class="label">Are you customer? 
-    <input class="customer-input" [(ngModel)]="deneme" (change)="customerCheck($event.target.value)">
-    <button type="button" class="btn btn-primary"> Add</button>
+    <input class="customer-input" [(ngModel)]="customer" (change)="customerCheck($event.target.value)">
 </label>
+-->
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">  
+    <label class="label" for="job">Who are you ?</label>
+    <input class="customer-input" type="text" name="id" id="id" formControlName="id">
+
+    <button class="btn btn-primary"> Show</button>
+
+</form>
+
+
+<ng-template [ngIf]=show>
+<div class="names">
+    <p  class ="item"> {{customer?.customer_id}} </p>
+    <p class ="item"> {{customer?.customer_name}} </p>
+    <p class ="item"> {{customer?.passaport_number}} </p>
+    <p class ="item"> {{customer?.segment}} </p>
+    <p class ="item"> {{customer?.total_milleage}} </p>
+    <p class ="item"> {{customer?.company_name}} </p>
+</div>
+</ng-template>
+
+
 
 <div class="row">   
-        <div class="col-sm-8" class="card"  *ngFor="let flight of flights; let i = index; " style="width: 18rem; margin-left:5rem;"  >
+        <div class="col-sm-8" class="card"  *ngFor="let flight of flights; let i = index; trackBy: trackByFn;" style="width: 18rem; margin-left:5rem;"  >
             <img class="card-img-top" src="../../../assets/flight.jpg" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{flight.flight_number}}</h5>
@@ -18,15 +39,22 @@
             <div class="card-body">
                 <select   class="browser-default custom-select" (change) = "selectOption($event.target.value, i)"
                 [(ngModel)]="amount">
-                    <option selected> Choose Your Ticket </option>       
-                      <option *ngFor ="let c of costs" [value] = "c.amount"> 
-                        {{c.fare_code}}
+                    <option > Choose Your Ticket </option>       
+                      <option *ngFor ="let c of costs;" [value] = "c.amount" [selected]="c.fare_code"> 
+                        {{c.fare_code}}  || {{c.amount}}₺
                       </option>  
    
                   </select>
-                
+                  <select   class="browser-default custom-select" (change) = "seatOption($event.target.value, i)"
+                  [(ngModel)]="seat">
+                      <option > Choose Your Seat </option>       
+                        <option *ngFor ="let seat of seats" [value] = "seat.seat_number"> 
+                          {{seat.seat_number}}
+                        </option>  
+     
+                    </select>
             </div>
             <p class="price"> {{flight?.amount}}₺</p>
-            <button>  BUY </button>
+            <button (click)="buttonClick(i)">  BUY </button>
         </div>
 </div>

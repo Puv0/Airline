@@ -31,6 +31,40 @@ const getFfcCustomers = (request,response)=>{
 
 }
 
+const checkin = (req,res)=>{
+    console.log(req.params.id)
+    pool.query(`SELECT * FROM reservation_history
+    WHERE customer_id = ${req.params.id}`, (error,results)=>{
+
+        if(error) {console.log(error.stack)}
+        else{
+        res.status(200).json({
+            msg:"succes",
+            data:results.rows
+        })}
+    })
+}
+
+const makeCheckin= (req,res)=>{
+    
+    
+    pool.query(`UPDATE seat_reservation
+    SET checked_in = 'true'
+    WHERE flight_number = '${req.body.flight_number}' and seat_number = '${req.body.seat_number}' 
+    and customer_id = ${req.body.customer_id} RETURNING *`,
+    (error,results)=>{
+        
+        if(error){console.log(error.stack)}
+        else{
+            res.status(201).json({
+                msg:results.command,
+                res:results
+            })
+        }
+    })
+    
+}
+
 
 const getCustomer = (req,res)=>{
     const iata = req.params.id.substring(0,2)
@@ -54,15 +88,14 @@ const getCustomer = (req,res)=>{
             }
             }
         })
-
 }
-
-
 
 
 
 module.exports = {
     getAllCustomers,
     getFfcCustomers,
-    getCustomer
+    getCustomer,
+    checkin,
+    makeCheckin
 }

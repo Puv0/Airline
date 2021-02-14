@@ -1,3 +1,4 @@
+import { HistoryComponent } from './flight/history/history.component';
 import { CheckinComponent } from './checkin/checkin.component';
 import { FlightShowComponent } from './flight/flight-show/flight-show.component';
 import { CustomerComponent } from './customer/customer.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
 {path:'flight',component:FlightComponent},
 {path:'customer', component: CustomerComponent},
 {path:'flight/:id' , component:FlightShowComponent},
-{path:'checkin',component:CheckinComponent}
+{path:'checkin',component:CheckinComponent},
+{path:'history',component:HistoryComponent}
 
 ];
 
